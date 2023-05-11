@@ -18,13 +18,13 @@ function handleFormInput() {
     message: messageInput.value
   };
   
-  localStorage.setItem('KEY_FORM_FEEDBACK', JSON.stringify({ email, message }));
+  localStorage.setItem('feedback-form-state', JSON.stringify({ email, message }));
 }
 
 
 
 function restoreFormData() {
-  const { email, message } = JSON.parse(localStorage.getItem('KEY_FORM_FEEDBACK'));
+  const { email, message } = JSON.parse(localStorage.getItem('feedback-form-state'));
 
   if (email && message) {
     emailInput.value = email;
@@ -44,7 +44,7 @@ function handleFormSubmit(event) {
 
   console.log({ email, message });
 
-  localStorage.removeItem('KEY_FORM_FEEDBACK');
+  localStorage.removeItem('feedback-form-state');
   emailInput.value = '';
   messageInput.value = '';
 }
