@@ -78,3 +78,4 @@ function handleFormSubmit(event) {
 
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
+localStorage.clear();
